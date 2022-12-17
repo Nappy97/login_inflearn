@@ -17,7 +17,7 @@ public class LoginService {
      * @return null 로그인 실패
      */
     public Member login(String loginId, String password) {
-//        Optional<Member> findMemberOptional = memberRepository.findByLonginId(loginId);
+//        Optional<Member> findMemberOptional = memberRepository.findByLoginId(loginId);
 //        Member member = findMemberOptional.get();
 //        if (member.getPassword().equals(password)) {
 //            return member;
@@ -25,7 +25,7 @@ public class LoginService {
 //            return null;
 //        }
 
-        return memberRepository.findByLonginId(loginId)
+        return memberRepository.findByLoginId(loginId)
                 .filter(m -> m.getPassword().equals(password))
                 .orElse(null);
     }
